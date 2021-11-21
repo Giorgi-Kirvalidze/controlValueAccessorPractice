@@ -1,0 +1,19 @@
+<h1 style="text-align: center">Practicing Control Value Accessors</h1>
+<form class="form" [formGroup]="form" (ngSubmit)="submitForm(form)">
+  {{form.value | json}}
+  <div class="form-field">
+    <label for="garageName">Garage name</label>
+    <input formControlName="garageName" id="garageName" type="text">
+  </div>
+  <div>
+    <app-car formControlName="carModel"></app-car>
+  </div>
+  <div class="form-action">
+    <button (click)="disableEnableInputs()">
+      {{ disableFields ? 'Enable' : 'Disable' }} Fields
+    </button>
+    <button type="submit">
+      Submit
+    </button>
+  </div>
+</form>
